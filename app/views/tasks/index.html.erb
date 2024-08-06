@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Tasks</h1>
+    <ul>
+      <% @tasks.each do |task| %>
+        <div class="d-flex align-items-center my-2">
+          <% if task.completed == true %>
+            <i class="fa-solid fa-square-check me-2"></i>
+          <% else %>
+             <i class="fa-solid fa-square me-2"></i>
+          <% end %>
+            <span><%= link_to task.title, task_path(task)%></span>
+        </div>
+      <% end %>
+    </ul>
+    <%= link_to 'Add a task', new_task_path  %>
+</div>
